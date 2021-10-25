@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Card from '../Card/Card'
-import Api from '../../../api/api'
+// import Api from '../../../api/api'
 
 const List = () => {
 
@@ -9,9 +9,11 @@ const List = () => {
   useEffect(() => {
     getTarefas();
   }, []);
+
+  const urlApi = 'http://localhost:3001/tarefas'
   
   const getTarefas = async () => {
-    const response = await Api.fetchGetAll()
+    const response = await fetch(urlApi)
     const data = await response.json();
     setTarefas(data);
   }
@@ -20,7 +22,7 @@ const List = () => {
     <div className="row row-cols-1 row-cols-md-3 g-4 mt-3">
       {
             tarefas.map((tarefa, index) => (
-               <Card data={tarefa} key={index} />
+               <Card data={tarefa} key={index}/>
             ))
          }
     </div>
