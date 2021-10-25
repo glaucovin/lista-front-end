@@ -1,0 +1,21 @@
+.legenda{
+    padding: 0 0 0 4rem;
+    font-style: italic;
+  }
+  
+  .legenda p{
+    padding: 0.1rem;
+  }
+  
+  .red{
+    color: red;
+  }
+  
+  .lightred{
+    color: #FF5555;
+  }
+  
+  .white{
+    color: white;
+  }
+  
